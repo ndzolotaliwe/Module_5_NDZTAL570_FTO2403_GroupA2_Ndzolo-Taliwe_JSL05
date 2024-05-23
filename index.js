@@ -51,32 +51,32 @@ function generatePlaylist(guardians, songs) {
         guardianDiv.appendChild(guardianTitle);
 
         if (playlist.length > 0) {
-    playlist.forEach(song => {
-        const songDiv = document.createElement('div');
-        songDiv.classList.add('song');
+            playlist.forEach(song => {
+                const songDiv = document.createElement('div');
+                songDiv.classList.add('song');
 
-        const songTitle = document.createElement('span');
-        songTitle.classList.add('song-title');
+                const songTitle = document.createElement('span');
+                songTitle.classList.add('song-title');
 
-        const titleText = document.createTextNode(`${song.title} by `);
-        const artistSpan = document.createElement('span');
-        artistSpan.textContent = song.artist;
+                const titleText = document.createTextNode(`${song.title} by `);
+                const artistSpan = document.createElement('span');
+                artistSpan.textContent = song.artist;
 
-        // Set the artist name color to white using inline style
-        artistSpan.style.color = 'white';
-        
+                // Set the artist name color to white using inline style
+                artistSpan.style.color = 'white';
 
-        songTitle.appendChild(titleText);
-        songTitle.appendChild(artistSpan);
 
-        songDiv.appendChild(songTitle);
-        guardianDiv.appendChild(songDiv);
-    });
-} else {
-    const noSongsMessage = document.createElement('p');
-    noSongsMessage.textContent = "No songs available in this genre.";
-    guardianDiv.appendChild(noSongsMessage);
-}
+                songTitle.appendChild(titleText);
+                songTitle.appendChild(artistSpan);
+
+                songDiv.appendChild(songTitle);
+                guardianDiv.appendChild(songDiv);
+            });
+        } else {
+            const noSongsMessage = document.createElement('p');
+            noSongsMessage.textContent = "No songs available in this genre.";
+            guardianDiv.appendChild(noSongsMessage);
+        }
 
         playlistsContainer.appendChild(guardianDiv);
     });
